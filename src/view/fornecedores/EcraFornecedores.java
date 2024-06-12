@@ -4,14 +4,13 @@ import model.DadosAplicacao;
 import model.Fornecedor;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class EcraFornecedores extends JFrame {
 
-    private JFrame parentFrame;
+    private final JFrame parentFrame;
     private JPanel painelEcraFornecedores;
     private JButton btnAdicionarFornecedor;
     private JButton btnSair;
