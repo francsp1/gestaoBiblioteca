@@ -1,16 +1,19 @@
 package model;
 
 public class Fornecedor {
+    private static int contaId = 0;
     private int id;
     private String nome;
     private String distribuidor;
-    private String Contacto;
+    private String contacto;
 
-    public Fornecedor(int id, String nome, String distribuidor, String contacto) {
-        this.id = id;
+    private boolean ativo;
+
+    public Fornecedor(String nome, String distribuidor, String contacto) {
+        this.id = ++contaId;
         this.nome = nome;
         this.distribuidor = distribuidor;
-        Contacto = contacto;
+        this.contacto = contacto;
     }
 
     public int getId() {
@@ -29,7 +32,7 @@ public class Fornecedor {
         this.nome = nome;
     }
 
-    public String getDistribuidor() {
+    public String getDistribuidora() {
         return distribuidor;
     }
 
@@ -38,10 +41,18 @@ public class Fornecedor {
     }
 
     public String getContacto() {
-        return Contacto;
+        return contacto;
     }
 
     public void setContacto(String contacto) {
-        Contacto = contacto;
+        contacto = contacto;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 }

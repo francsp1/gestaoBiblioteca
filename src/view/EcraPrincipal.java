@@ -1,5 +1,7 @@
 package view;
 
+import model.DadosAplicacao;
+import model.Fornecedor;
 import view.fornecedores.EcraFornecedores;
 import view.livros.EcraLivros;
 
@@ -28,6 +30,18 @@ public class EcraPrincipal extends JFrame {
         btnSair.addActionListener(this::btnSairActionPerformed);
         btnFornecedores.addActionListener(this::btnFornecedoresActionPerformed);
         btnLivros.addActionListener(this::btnLivrosActionPerformed);
+
+        Fornecedor fornecedor1 = new Fornecedor("PortoEditora", "DHL", "244 2444 244");
+        Fornecedor fornecedor2 = new Fornecedor("Livros Horizonte", "DHL", "244 2444 244");
+        Fornecedor fornecedor3 = new Fornecedor("Leya", "DHL", "244 2444 244");
+        Fornecedor fornecedor4 = new Fornecedor("Bertrand", "DHL", "244 2444 244");
+        Fornecedor fornecedor5 = new Fornecedor("Livraria Cultura", "DHL", "244 2444 244");
+
+        DadosAplicacao.INSTANCIA.adicionarFornecedor(fornecedor1);
+        DadosAplicacao.INSTANCIA.adicionarFornecedor(fornecedor2);
+        DadosAplicacao.INSTANCIA.adicionarFornecedor(fornecedor3);
+        DadosAplicacao.INSTANCIA.adicionarFornecedor(fornecedor4);
+        DadosAplicacao.INSTANCIA.adicionarFornecedor(fornecedor5);
     }
 
 

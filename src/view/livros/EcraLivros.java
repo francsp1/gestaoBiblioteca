@@ -22,7 +22,6 @@ public class EcraLivros extends JFrame {
 
         this.setVisible(true);
 
-
     }
 
     private void btnSairActionPerformed(ActionEvent actionEvent) {

@@ -1,5 +1,8 @@
 package view.fornecedores;
 
+import model.DadosAplicacao;
+import model.Fornecedor;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -34,23 +37,10 @@ public class EcraFornecedores extends JFrame {
         JPanel container = new JPanel();
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 
-        PainelFornecedor painel1 = new PainelFornecedor();
-        PainelFornecedor painel2 = new PainelFornecedor();
-        PainelFornecedor painel3 = new PainelFornecedor();
-        PainelFornecedor painel4 = new PainelFornecedor();
-        PainelFornecedor painel5 = new PainelFornecedor();
-        PainelFornecedor painel6 = new PainelFornecedor();
-        PainelFornecedor painel7 = new PainelFornecedor();
-        PainelFornecedor painel8 = new PainelFornecedor();
+        for (Fornecedor fornecedor : DadosAplicacao.INSTANCIA.getFornecedores()) {
+            container.add(new PainelFornecedor(fornecedor));
+        }
 
-        container.add(painel1);
-        container.add(painel2);
-        container.add(painel3);
-        container.add(painel4);
-        container.add(painel5);
-        container.add(painel6);
-        container.add(painel7);
-        container.add(painel8);
 
         container.setPreferredSize(new Dimension(700, 1000)); // Set your preferred width and height
 
