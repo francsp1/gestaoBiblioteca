@@ -18,8 +18,6 @@ public class PainelFornecedor extends JPanel{
         Border blackBorder = BorderFactory.createLineBorder(Color.BLACK);
         this.setBorder(blackBorder);
 
-
-        // Initialize your components here
         lblId = new JLabel("ID: " + fornecedor.getId());
         lblNome = new JLabel("Nome: " + fornecedor.getNome());
         lblDistribuidora = new JLabel("Distribuidora: " + fornecedor.getDistribuidora());

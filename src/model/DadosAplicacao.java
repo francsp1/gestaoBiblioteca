@@ -19,7 +19,4 @@ public enum DadosAplicacao {
         return fornecedores;
     }
 
-    public void setFornecedores(ArrayList<Fornecedor> fornecedores) {
-        this.fornecedores = fornecedores;
-    }
 }

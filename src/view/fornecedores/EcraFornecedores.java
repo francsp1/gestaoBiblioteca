@@ -30,7 +30,6 @@ public class EcraFornecedores extends JFrame {
         btnSair.addActionListener(this::btnSairActionPerformed);
 
         this.setVisible(true);
-
     }
 
     private void preencherFornecedores() {
@@ -42,12 +41,9 @@ public class EcraFornecedores extends JFrame {
         }
 
 
-        container.setPreferredSize(new Dimension(700, 1000)); // Set your preferred width and height
+        container.setPreferredSize(new Dimension(700, 1000));
 
         scrollPaneFornecedores.setViewportView(container);
-
-        container.revalidate();
-        container.repaint();
     }
 
     private void btnSairActionPerformed(ActionEvent actionEvent) {
