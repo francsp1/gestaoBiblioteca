@@ -5,13 +5,13 @@ import java.awt.event.ActionEvent;
 
 public class EcraLivros extends JFrame {
 
-    private JFrame parentFrame;
+    private final JFrame parentFrame;
     private JButton btnSair;
     private JPanel painelEcraLivros;
 
 
-    public EcraLivros(String title, JFrame parent) {
-        super(title);
+    public EcraLivros(JFrame parent) {
+        super("Livros");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setContentPane(painelEcraLivros);
         pack();
@@ -20,8 +20,8 @@ public class EcraLivros extends JFrame {
 
         btnSair.addActionListener(this::btnSairActionPerformed);
 
+        setLocationRelativeTo(null);
         this.setVisible(true);
-
     }
 
     private void btnSairActionPerformed(ActionEvent actionEvent) {

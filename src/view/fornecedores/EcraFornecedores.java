@@ -16,19 +16,21 @@ public class EcraFornecedores extends JFrame {
     private JButton btnSair;
     private JScrollPane scrollPaneFornecedores;
 
-    public EcraFornecedores(String title, JFrame parent) {
-        super(title);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    public EcraFornecedores(JFrame parent) {
+        super("Fornecedores");
+        //setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setContentPane(painelEcraFornecedores);
         pack();
 
         this.parentFrame = parent;
 
-        preencherFornecedores();
-
         btnSair.addActionListener(this::btnSairActionPerformed);
 
-        this.setVisible(true);
+        preencherFornecedores();
+
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     private void preencherFornecedores() {

@@ -31,23 +31,14 @@ public class EcraPrincipal extends JFrame {
         btnFornecedores.addActionListener(this::btnFornecedoresActionPerformed);
         btnLivros.addActionListener(this::btnLivrosActionPerformed);
 
-        Fornecedor fornecedor1 = new Fornecedor("PortoEditora", "DHL", "244 2444 244");
-        Fornecedor fornecedor2 = new Fornecedor("Livros Horizonte", "DHL", "244 2444 244");
-        Fornecedor fornecedor3 = new Fornecedor("Leya", "DHL", "244 2444 244");
-        Fornecedor fornecedor4 = new Fornecedor("Bertrand", "DHL", "244 2444 244");
-        Fornecedor fornecedor5 = new Fornecedor("Livraria Cultura", "DHL", "244 2444 244");
-
-        DadosAplicacao.INSTANCIA.adicionarFornecedor(fornecedor1);
-        DadosAplicacao.INSTANCIA.adicionarFornecedor(fornecedor2);
-        DadosAplicacao.INSTANCIA.adicionarFornecedor(fornecedor3);
-        DadosAplicacao.INSTANCIA.adicionarFornecedor(fornecedor4);
-        DadosAplicacao.INSTANCIA.adicionarFornecedor(fornecedor5);
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
 
 
     public static void main(String[] args) {
-        new EcraPrincipal("Ecrã Principal").setVisible(true);
+        new EcraPrincipal("Menu Principal");
     }
 
     private void btnSairActionPerformed(ActionEvent actionEvent) {
@@ -55,12 +46,12 @@ public class EcraPrincipal extends JFrame {
     }
 
     private void btnFornecedoresActionPerformed(ActionEvent e) {
-        EcraFornecedores ecraFornecedores = new EcraFornecedores("Ecrã Fornecedores", this);
+        EcraFornecedores ecraFornecedores = new EcraFornecedores(this);
         this.setVisible(false);
     }
 
     private void btnLivrosActionPerformed(ActionEvent actionEvent) {
-        EcraLivros ecraLivros = new EcraLivros("Ecrã Livros", this);
+        EcraLivros ecraLivros = new EcraLivros(this);
         this.setVisible(false);
     }
 }
