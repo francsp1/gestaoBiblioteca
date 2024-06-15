@@ -45,7 +45,7 @@ public class EcraPrincipal extends JFrame {
         System.exit(0);
     }
 
-    private void btnFornecedoresActionPerformed(ActionEvent e) {
+    private void btnFornecedoresActionPerformed(ActionEvent actionEvent) {
         EcraFornecedores ecraFornecedores = new EcraFornecedores(this);
         this.setVisible(false);
     }

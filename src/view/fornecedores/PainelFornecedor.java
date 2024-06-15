@@ -23,7 +23,7 @@ public class PainelFornecedor extends JPanel{
 
         StringBuilder estado = new StringBuilder();
         estado.append("Estado: ");
-        if (fornecedor.isAtivo()) {
+        if (fornecedor.getEstado()) {
             estado.append("Ativo");
         }else {
             estado.append("Inativo");

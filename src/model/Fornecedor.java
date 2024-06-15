@@ -6,15 +6,14 @@ public class Fornecedor {
     private String nome;
     private String distribuidora;
     private String contacto;
-
-    private boolean ativo;
+    private boolean Estado;
 
     public Fornecedor(String nome, String distribuidor, String contacto) {
         this.id = ++contaId;
         this.nome = nome;
         this.distribuidora = distribuidor;
         this.contacto = contacto;
-        this.ativo = true;
+        this.Estado = true;
     }
 
     public int getId() {
@@ -49,11 +48,11 @@ public class Fornecedor {
         contacto = contacto;
     }
 
-    public boolean isAtivo() {
-        return ativo;
+    public boolean getEstado() {
+        return Estado;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+    public void setEstado(boolean estado) {
+        this.Estado = estado;
     }
 }

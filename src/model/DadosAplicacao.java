@@ -7,7 +7,7 @@ public enum DadosAplicacao {
 
     private ArrayList<Fornecedor> fornecedores;
 
-     DadosAplicacao() {
+     private DadosAplicacao() {
         this.fornecedores = new ArrayList<>();
         Fornecedor fornecedor1 = new Fornecedor("PortoEditora", "DHL", "244 2444 244");
         Fornecedor fornecedor2 = new Fornecedor("Livros Horizonte", "DHL", "244 2444 244");

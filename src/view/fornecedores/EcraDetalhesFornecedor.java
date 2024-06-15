@@ -50,12 +50,12 @@ public class EcraDetalhesFornecedor extends JFrame {
         txtDistribuidora.setText(fornecedor.getDistribuidora());
         txtContacto.setText(fornecedor.getContacto());
 
-        if (fornecedor.isAtivo()) {
+        if (fornecedor.getEstado()) {
             lblEstado.setText("Ativo");
-            btnEstado.setText("Inativar Fornecedor");
+            btnEstado.setText("Alterar Estado - Inativar Fornecedor");
         } else {
             lblEstado.setText("Inativo");
-            btnEstado.setText("Ativar Fornecedor");
+            btnEstado.setText("Alterar Estado - Ativar Fornecedor");
         }
 
 
@@ -67,14 +67,14 @@ public class EcraDetalhesFornecedor extends JFrame {
     }
 
     private void btnAlterarEstadoFornecedorActionPerformed(ActionEvent actionEvent, Fornecedor fornecedor) {
-        if (fornecedor.isAtivo()) {
-            fornecedor.setAtivo(false);
+        if (fornecedor.getEstado()) {
+            fornecedor.setEstado(false);
             lblEstado.setText("Inativo");
-            btnEstado.setText("Ativar Fornecedor");
+            btnEstado.setText("Alterar Estado - Ativar Fornecedor");
         } else {
-            fornecedor.setAtivo(true);
+            fornecedor.setEstado(true);
             lblEstado.setText("Ativo");
-            btnEstado.setText("Inativar Fornecedor");
+            btnEstado.setText("Alterar Estado - Inativar Fornecedor");
         }
 
         ecraPai.preencherFornecedores();
