@@ -6,6 +6,8 @@ public enum DadosAplicacao {
     INSTANCIA;
 
     private ArrayList<Fornecedor> fornecedores;
+    private ArrayList<Livro> livros;
+    private ArrayList<Livro> livrosEncomendados;
 
      private DadosAplicacao() {
         this.fornecedores = new ArrayList<>();
@@ -30,4 +32,11 @@ public enum DadosAplicacao {
         return fornecedores;
     }
 
+    public ArrayList<Livro> getLivros() {
+        return livros;
+    }
+
+    public ArrayList<Livro> getLivrosEncomendados() {
+        return livrosEncomendados;
+    }
 }

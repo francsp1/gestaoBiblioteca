@@ -1,7 +1,7 @@
 package model;
 
 public class Fornecedor {
-    private static int contaId = 0;
+    private static int contaIdFornecedores = 0;
     private int id;
     private String nome;
     private String distribuidora;
@@ -9,7 +9,7 @@ public class Fornecedor {
     private boolean Estado;
 
     public Fornecedor(String nome, String distribuidor, String contacto) {
-        this.id = ++contaId;
+        this.id = ++contaIdFornecedores;
         this.nome = nome;
         this.distribuidora = distribuidor;
         this.contacto = contacto;
