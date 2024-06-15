@@ -5,33 +5,46 @@ import model.Fornecedor;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class PainelFornecedor extends JPanel{
-    private JPanel painelFornecedor;
-    private JLabel lblDistribuidora;
-    private JLabel lblContacto;
-    private JLabel lblNome;
-    private JLabel lblId;
-    private JButton btnDetalhes;
+    private final EcraFornecedores ecraPai;
 
-    public PainelFornecedor(Fornecedor fornecedor){
+    public PainelFornecedor(EcraFornecedores ecraPai, Fornecedor fornecedor){
         Border blackBorder = BorderFactory.createLineBorder(Color.BLACK);
-        this.setBorder(blackBorder);
+        setBorder(blackBorder);
 
-        lblId = new JLabel("ID: " + fornecedor.getId());
-        lblNome = new JLabel("Nome: " + fornecedor.getNome());
-        lblDistribuidora = new JLabel("Distribuidora: " + fornecedor.getDistribuidora());
-        lblContacto = new JLabel("Contacto: "+ fornecedor.getContacto());
+        this.ecraPai = ecraPai;
 
-        btnDetalhes = new JButton("Detalhes");
+        JLabel lblId = new JLabel("ID: " + fornecedor.getId());
+        JLabel lblNome = new JLabel("Nome: " + fornecedor.getNome());
+        JLabel lblDistribuidora = new JLabel("Distribuidora: " + fornecedor.getDistribuidora());
+        JLabel lblContacto = new JLabel("Contacto: "+ fornecedor.getContacto());
+
+        StringBuilder estado = new StringBuilder();
+        estado.append("Estado: ");
+        if (fornecedor.isAtivo()) {
+            estado.append("Ativo");
+        }else {
+            estado.append("Inativo");
+        }
+        JLabel lblEstado = new JLabel(estado.toString());
+
+        JButton btnDetalhes = new JButton("Detalhes");
+        btnDetalhes.addActionListener(e -> btnDetalhesActionPerformed(e, fornecedor));
 
 
-        setLayout(new GridLayout(5, 1)); // Adjust layout as needed
+        setLayout(new GridLayout(6, 1)); // Adjust layout as needed
         add(lblId);
         add(lblNome);
         add(lblDistribuidora);
         add(lblContacto);
+        add(lblEstado);
         add(btnDetalhes);
 
+    }
+
+    private void btnDetalhesActionPerformed(ActionEvent actionEvent, Fornecedor fornecedor) {
+        EcraDetalhesFornecedor ecraDetalhesFornecedor = new EcraDetalhesFornecedor(ecraPai, fornecedor);
     }
 }

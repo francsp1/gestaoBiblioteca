@@ -4,7 +4,7 @@ public class Fornecedor {
     private static int contaId = 0;
     private int id;
     private String nome;
-    private String distribuidor;
+    private String distribuidora;
     private String contacto;
 
     private boolean ativo;
@@ -12,8 +12,9 @@ public class Fornecedor {
     public Fornecedor(String nome, String distribuidor, String contacto) {
         this.id = ++contaId;
         this.nome = nome;
-        this.distribuidor = distribuidor;
+        this.distribuidora = distribuidor;
         this.contacto = contacto;
+        this.ativo = true;
     }
 
     public int getId() {
@@ -33,11 +34,11 @@ public class Fornecedor {
     }
 
     public String getDistribuidora() {
-        return distribuidor;
+        return distribuidora;
     }
 
-    public void setDistribuidor(String distribuidor) {
-        this.distribuidor = distribuidor;
+    public void setDistribuidora(String distribuidora) {
+        this.distribuidora = distribuidora;
     }
 
     public String getContacto() {

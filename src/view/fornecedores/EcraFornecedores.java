@@ -7,6 +7,7 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class EcraFornecedores extends JFrame {
 
@@ -15,6 +16,7 @@ public class EcraFornecedores extends JFrame {
     private JButton btnAdicionarFornecedor;
     private JButton btnSair;
     private JScrollPane scrollPaneFornecedores;
+    private JLabel lblFornecedores;
 
     public EcraFornecedores(JFrame parent) {
         super("Fornecedores");
@@ -26,6 +28,7 @@ public class EcraFornecedores extends JFrame {
         this.parentFrame = parent;
 
         btnSair.addActionListener(this::btnSairActionPerformed);
+        btnAdicionarFornecedor.addActionListener(this::btnAdicionarFornecedorActionPerformed);
 
         preencherFornecedores();
 
@@ -33,12 +36,13 @@ public class EcraFornecedores extends JFrame {
         setVisible(true);
     }
 
-    private void preencherFornecedores() {
+
+    public void preencherFornecedores() {
         JPanel container = new JPanel();
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 
         for (Fornecedor fornecedor : DadosAplicacao.INSTANCIA.getFornecedores()) {
-            container.add(new PainelFornecedor(fornecedor));
+            container.add(new PainelFornecedor(this, fornecedor));
         }
 
 
@@ -48,7 +52,13 @@ public class EcraFornecedores extends JFrame {
     }
 
     private void btnSairActionPerformed(ActionEvent actionEvent) {
-        this.dispose();
+        dispose();
         parentFrame.setVisible(true);
     }
+
+    private void btnAdicionarFornecedorActionPerformed(ActionEvent actionEvent) {
+        EcraAdicionarFornecedor ecraAdicionarFornecedor = new EcraAdicionarFornecedor(this);
+    }
+
+
 }
