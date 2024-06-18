@@ -29,11 +29,15 @@ public enum DadosAplicacao {
         Livro livro2 = new Livro(987654321, "O Principezinho", new ArrayList<String>(){{add("Antoine de Saint-Exupéry");}}, "PortoEditora", 1, 1943, "Infantil", "Infantil");
         Livro livro3 = new Livro(987654321, "Harry Potter e a Pedra Filosofal", new ArrayList<String>(){{add("J.K. Rowling");}}, "PortoEditora", 1, 1997,10,11, "Fantasia", "Fantasia Urbana");
         Livro livro4 = new Livro(123456789, "Os Lusíadas", new ArrayList<String>(){{add("Luís de Camões");}}, "PortoEditora", 1, 1556,2,3, "Épico", "Épico");
+        //livro  com varios autores
+        Livro livro6 = new Livro(123456789, "Classicos da Literatura", new ArrayList<String>(){{add("J.R.R. Tolkien");add("Antoine de Saint-Exupéry");add("J.K. Rowling");add("Luís de Camões");}}, "PortoEditora", 1, 1954, 20,21,"Fantasia", "Alta Fantasia");
 
         adicionarLivro(livro1);
         adicionarLivro(livro2);
         adicionarLivro(livro3);
         adicionarLivro(livro4);
+        adicionarLivro(livro6);
+
 
      }
 

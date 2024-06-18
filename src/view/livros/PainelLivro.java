@@ -27,14 +27,7 @@ public class PainelLivro extends JPanel{
 
         JLabel lblId = new JLabel("ID: " + livro.getId());
         JLabel lblTitulo = new JLabel("Nome: " + livro.getTitulo());
-
-        StringBuilder autores = new StringBuilder();
-        autores.append("Autores: ");
-        for (String autor : livro.getAutores()) {
-            autores.append(autor).append(", ");
-        }
-
-        JLabel lblAutores = new JLabel(autores.toString());
+        JLabel lblAutores = new JLabel("Autores: " + livro.getAutoresString());
         JLabel lblGenero = new JLabel("Género: " + livro.getGenero() + ", Subgénero: " + livro.getSubgenero() );
 
         StringBuilder estado = new StringBuilder();

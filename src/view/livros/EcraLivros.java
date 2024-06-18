@@ -41,7 +41,7 @@ public class EcraLivros extends JFrame {
              container.add(new PainelLivro(this, livro));
         }
 
-        container.setPreferredSize(new java.awt.Dimension(700, 700));
+        container.setPreferredSize(new java.awt.Dimension(700, 1000));
 
         scrollPaneLivros.setViewportView(container);
     }

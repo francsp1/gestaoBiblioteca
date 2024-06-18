@@ -82,6 +82,21 @@ public class Livro {
     public ArrayList<String> getAutores() {
         return autores;
     }
+    public String getAutoresString() {
+        if (this.autores.isEmpty()) {
+            return "";
+        }
+
+        StringBuilder autores = new StringBuilder();
+        for (String autor : this.autores) {
+            autores.append(autor).append(", ");
+        }
+
+        //remove last comma and space
+        autores.delete(autores.length() - 2, autores.length());
+
+        return autores.toString();
+    }
 
     public void setAutores(ArrayList<String> autores) {
         this.autores = autores;

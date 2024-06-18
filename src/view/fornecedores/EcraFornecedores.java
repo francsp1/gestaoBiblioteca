@@ -44,7 +44,7 @@ public class EcraFornecedores extends JFrame {
             container.add(new PainelFornecedor(this, fornecedor));
         }
 
-        container.setPreferredSize(new Dimension(700, 700));
+        container.setPreferredSize(new Dimension(700, 1000));
 
         scrollPaneFornecedores.setViewportView(container);
     }

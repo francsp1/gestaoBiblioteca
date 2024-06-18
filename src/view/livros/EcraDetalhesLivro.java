@@ -32,7 +32,7 @@ public class EcraDetalhesLivro extends JFrame {
     private JTextField txtEstante;
     private JTextField txtPrateleira;
     private JLabel lblGenero;
-    private JTextField textField1;
+    private JTextField txtSubgenero;
     private JTextField txtGenero;
 
     public EcraDetalhesLivro(EcraLivros ecraPai, Livro livro) {
@@ -55,6 +55,33 @@ public class EcraDetalhesLivro extends JFrame {
     }
 
     private void preencherDetalhesLivro(Livro livro) {
+        lblId.setText(String.valueOf(livro.getId()));
+        txtISBN.setText(String.valueOf(livro.getIsbn()));
+        txtTitulo.setText(livro.getTitulo());
+        txtAutores.setText(livro.getAutoresString());
+        txtEditora.setText(livro.getEditora());
+        txtEdicao.setText(String.valueOf(livro.getEdicao()));
+        txtAno.setText(String.valueOf(livro.getAno()));
+        int estante = livro.getEstante();
+        if (estante == Integer.MIN_VALUE) {
+            txtEstante.setText("Não preenchido");
+        } else {
+            txtEstante.setText(String.valueOf(estante));
+        }
+        int prateleira = livro.getPrateleira();
+        if (prateleira == Integer.MIN_VALUE) {
+            txtPrateleira.setText("Não preenchido");
+        } else {
+            txtPrateleira.setText(String.valueOf(prateleira));
+        }
+        txtGenero.setText(livro.getGenero());
+        txtSubgenero.setText(livro.getSubgenero());
+        if (livro.getEstado()) {
+            lblEstado.setText("Ativo");
+        } else {
+            lblEstado.setText("Inativo");
+        }
+
     }
 
     private void btnSairActionPerformed(ActionEvent actionEvent) {
