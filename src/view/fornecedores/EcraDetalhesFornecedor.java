@@ -22,6 +22,7 @@ public class EcraDetalhesFornecedor extends JFrame {
     private JLabel lblIdPrefix;
     private JLabel lblEstado;
     private JLabel lblEstadoPrefix;
+    private JPanel painelDetalhesFornecedor;
 
     public EcraDetalhesFornecedor(EcraFornecedores ecraPai, Fornecedor fornecedor) {
         super("Detalhes do Fornecedor");

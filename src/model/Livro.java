@@ -25,15 +25,15 @@ public class Livro {
         this.editora = editora;
         this.edicao = edicao;
         this.ano = ano;
-        this.estante = -1;
-        this.prateleira = -1;
+        this.estante = Integer.MIN_VALUE;
+        this.prateleira = Integer.MIN_VALUE;
         this.genero = genero;
         this.subgenero = subgenero;
         this.estado = false;
     }
 
-    public Livro(int id, int isbn, String titulo, ArrayList<String> autores, String editora, int edicao, int ano, int estante, int prateleira, String genero, String subgenero) {
-        this.id = id;
+    public Livro(int isbn, String titulo, ArrayList<String> autores, String editora, int edicao, int ano, int estante, int prateleira, String genero, String subgenero) {
+        this.id = ++contaIdFornecedores;
         this.isbn = isbn;
         this.titulo = titulo;
         this.autores = autores;
