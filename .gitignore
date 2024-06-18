@@ -31,4 +31,4 @@ bin/
 
 docs/*.vpp.bak*
 
-./*.iml
+*.iml
