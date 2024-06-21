@@ -1,15 +1,14 @@
 package view.livros;
 
 import model.Livro;
+import view.Painel;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class PainelLivro extends JPanel{
-    private final EcraLivros ecraPai;
-    private Livro livro;
+public class PainelLivro extends Painel {
+    private final Livro livro;
     private final JLabel lblId;
     private final JLabel lblTitulo;
     private final JLabel lblAutores;
@@ -21,10 +20,8 @@ public class PainelLivro extends JPanel{
 
 
     public PainelLivro(EcraLivros ecraPai, Livro livro){
-        Border blackBorder = BorderFactory.createLineBorder(Color.BLACK);
-        setBorder(blackBorder);
+        super(ecraPai);
 
-        this.ecraPai = ecraPai;
         this.livro = livro;
 
         lblId = new JLabel();
@@ -37,18 +34,10 @@ public class PainelLivro extends JPanel{
 
         preencherDetalhesLivro();
 
-        desenharPainel(livro);
+        desenharPainel();
 
         btnDetalhes.addActionListener(e -> btnDetalhesActionPerformed(e, livro));
 
-    }
-
-    void setBackGroundVerde() {
-        setBackground(new Color(204, 255, 204));
-    }
-
-    void setBackGroundVermelho() {
-        setBackground(new Color(255, 204, 204));
     }
 
     public void preencherDetalhesLivro() {
@@ -82,7 +71,7 @@ public class PainelLivro extends JPanel{
 
     }
 
-    private void desenharPainel(Livro livro) {
+    private void desenharPainel() {
         setLayout(new GridLayout(7, 1)); // Adjust layout as needed
         add(lblId);
         add(lblTitulo);
@@ -94,7 +83,8 @@ public class PainelLivro extends JPanel{
     }
 
     private void btnDetalhesActionPerformed(ActionEvent actionEvent, Livro livro) {
-        EcraDetalhesLivro ecraDetalhesLivro = new EcraDetalhesLivro(ecraPai, this, livro);
+        EcraLivros ecraPai = (EcraLivros) this.ecraPai;
+        new EcraDetalhesLivro(ecraPai, this, livro);
     }
 
     JLabel getLblEstado(){

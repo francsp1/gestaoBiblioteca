@@ -99,8 +99,6 @@ public class EcraDetalhesLivro extends JFrame {
         } else {
             lblReservado.setText("Não");
         }
-
-
     }
 
     private void btnSairActionPerformed(ActionEvent actionEvent) {
@@ -112,21 +110,12 @@ public class EcraDetalhesLivro extends JFrame {
             livro.setEstado(false);
             lblEstado.setText("Inativo");
             btnEstado.setText("Alterar Estado - Ativar Livro");
-
-            painelLivro.setBackGroundVermelho();
-            painelLivro.getLblEstado().setText("Estado: Inativo");
-            painelLivro.revalidate();
-            painelLivro.repaint();
         } else {
             livro.setEstado(true);
             lblEstado.setText("Ativo");
             btnEstado.setText("Alterar Estado - Inativar Livro");
-
-            painelLivro.setBackGroundVerde();
-            painelLivro.getLblEstado().setText("Estado: Ativo");
-            ecraPai.revalidate();
-            ecraPai.repaint();
         }
 
+        painelLivro.preencherDetalhesLivro();
     }
 }
