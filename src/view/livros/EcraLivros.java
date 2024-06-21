@@ -33,7 +33,7 @@ public class EcraLivros extends JFrame {
         this.setVisible(true);
     }
 
-    private void preencherLivros() {
+    void preencherLivros() {
         JPanel container = new JPanel();
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 

@@ -61,11 +61,10 @@ public class EcraAdicionarFornecedor extends JFrame {
 
     private void mostrarErro(String erro) {
         JOptionPane.showMessageDialog(this, erro);
-
     }
 
     private void btnSairActionPerformed(ActionEvent actionEvent) {
-
+        dispose();
     }
 
     private void btnBtnAdicionarFornecedorActionPerformed(ActionEvent actionEvent) {

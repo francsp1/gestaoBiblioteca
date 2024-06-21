@@ -47,11 +47,11 @@ public class EcraPrincipal extends JFrame {
 
     private void btnFornecedoresActionPerformed(ActionEvent actionEvent) {
         EcraFornecedores ecraFornecedores = new EcraFornecedores(this);
-        this.setVisible(false);
+        setVisible(false);
     }
 
     private void btnLivrosActionPerformed(ActionEvent actionEvent) {
         EcraLivros ecraLivros = new EcraLivros(this);
-        this.setVisible(false);
+        setVisible(false);
     }
 }

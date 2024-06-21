@@ -16,6 +16,8 @@ public class Livro {
     private String genero;
     private String subgenero;
     private boolean estado;
+    private boolean emprestado;
+    private boolean reservado;
 
     public Livro(int isbn, String titulo, ArrayList<String> autores, String editora, int edicao, int ano, /*int estante, int prateleira,*/ String genero, String subgenero) {
         this.id = ++contaIdFornecedores;
@@ -30,6 +32,8 @@ public class Livro {
         this.genero = genero;
         this.subgenero = subgenero;
         this.estado = false;
+        this.emprestado = false;
+        this.reservado = false;
     }
 
     public Livro(int isbn, String titulo, ArrayList<String> autores, String editora, int edicao, int ano, int estante, int prateleira, String genero, String subgenero) {
@@ -45,6 +49,8 @@ public class Livro {
         this.genero = genero;
         this.subgenero = subgenero;
         this.estado = true;
+        this.emprestado = false;
+        this.reservado = false;
     }
 
     public static int getContaIdFornecedores() {
@@ -164,5 +170,21 @@ public class Livro {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public boolean isEmprestado() {
+        return emprestado;
+    }
+
+    public void setEmprestado(boolean emprestado) {
+        this.emprestado = emprestado;
+    }
+
+    public boolean isReservado() {
+        return reservado;
+    }
+
+    public void setReservado(boolean reservado) {
+        this.reservado = reservado;
     }
 }

@@ -3,10 +3,12 @@ package view.livros;
 import model.Livro;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class EcraDetalhesLivro extends JFrame {
     private final EcraLivros ecraPai;
+    private final PainelLivro painelLivro;
     private JPanel painelEcraDetalhesLivro;
     private JButton btnConfirmar;
     private JButton btnSair;
@@ -34,15 +36,19 @@ public class EcraDetalhesLivro extends JFrame {
     private JLabel lblGenero;
     private JTextField txtSubgenero;
     private JTextField txtGenero;
+    private JLabel lblEmprestadoPrefix;
+    private JLabel lblEmprestado;
+    private JLabel lblReservadoPrefix;
+    private JLabel lblReservado;
 
-    public EcraDetalhesLivro(EcraLivros ecraPai, Livro livro) {
+    public EcraDetalhesLivro(EcraLivros ecraPai, PainelLivro painelLivro, Livro livro) {
         super("Detalhes do Fornecedor");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setContentPane(painelEcraDetalhesLivro);
         pack();
 
         this.ecraPai = ecraPai;
-
+        this.painelLivro = painelLivro;
 
         btnSair.addActionListener(this::btnSairActionPerformed);
         btnEstado.addActionListener(e -> btnAlterarEstadoFornecedorActionPerformed(e, livro));
@@ -78,9 +84,22 @@ public class EcraDetalhesLivro extends JFrame {
         txtSubgenero.setText(livro.getSubgenero());
         if (livro.getEstado()) {
             lblEstado.setText("Ativo");
+            btnEstado.setText("Alterar Estado - Inativar Livro");
         } else {
             lblEstado.setText("Inativo");
+            btnEstado.setText("Alterar Estado - Ativar Livro");
         }
+        if (livro.isEmprestado()) {
+            lblEmprestado.setText("Sim");
+        } else {
+            lblEmprestado.setText("Não");
+        }
+        if (livro.isReservado()) {
+            lblReservado.setText("Sim");
+        } else {
+            lblReservado.setText("Não");
+        }
+
 
     }
 
@@ -89,7 +108,25 @@ public class EcraDetalhesLivro extends JFrame {
     }
 
     private void btnAlterarEstadoFornecedorActionPerformed(ActionEvent e, Livro livro) {
+        if (livro.getEstado()) {
+            livro.setEstado(false);
+            lblEstado.setText("Inativo");
+            btnEstado.setText("Alterar Estado - Ativar Livro");
 
+            painelLivro.setBackGroundVermelho();
+            painelLivro.getLblEstado().setText("Estado: Inativo");
+            painelLivro.revalidate();
+            painelLivro.repaint();
+        } else {
+            livro.setEstado(true);
+            lblEstado.setText("Ativo");
+            btnEstado.setText("Alterar Estado - Inativar Livro");
+
+            painelLivro.setBackGroundVerde();
+            painelLivro.getLblEstado().setText("Estado: Ativo");
+            ecraPai.revalidate();
+            ecraPai.repaint();
+        }
 
     }
 }
