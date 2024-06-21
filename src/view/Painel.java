@@ -4,10 +4,10 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-public class Painel extends JPanel{
+public class Painel extends JPanel {
     protected final JFrame ecraPai;
 
-    public Painel(JFrame ecraPai){
+    public Painel(JFrame ecraPai) {
         this.ecraPai = ecraPai;
         Border blackBorder = BorderFactory.createLineBorder(Color.BLACK);
         setBorder(blackBorder);

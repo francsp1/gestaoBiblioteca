@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Livro {
     private static int contaIdFornecedores = 0;
     private int id;
-    private int isbn;
+    private String isbn;
     private String titulo;
     private ArrayList<String> autores;
     private String editora;
@@ -19,7 +19,7 @@ public class Livro {
     private boolean emprestado;
     private boolean reservado;
 
-    public Livro(int isbn, String titulo, ArrayList<String> autores, String editora, int edicao, int ano, /*int estante, int prateleira,*/ String genero, String subgenero) {
+    public Livro(String isbn, String titulo, ArrayList<String> autores, String editora, int edicao, int ano, /*int estante, int prateleira,*/ String genero, String subgenero) {
         this.id = ++contaIdFornecedores;
         this.isbn = isbn;
         this.titulo = titulo;
@@ -36,7 +36,7 @@ public class Livro {
         this.reservado = false;
     }
 
-    public Livro(int isbn, String titulo, ArrayList<String> autores, String editora, int edicao, int ano, int estante, int prateleira, String genero, String subgenero) {
+    public Livro(String isbn, String titulo, ArrayList<String> autores, String editora, int edicao, int ano, int estante, int prateleira, String genero, String subgenero) {
         this.id = ++contaIdFornecedores;
         this.isbn = isbn;
         this.titulo = titulo;
@@ -69,11 +69,11 @@ public class Livro {
         this.id = id;
     }
 
-    public int getIsbn() {
+    public String  getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(int isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
@@ -186,5 +186,9 @@ public class Livro {
 
     public void setReservado(boolean reservado) {
         this.reservado = reservado;
+    }
+
+    public void add(String autor) {
+        this.autores.add(autor);
     }
 }
