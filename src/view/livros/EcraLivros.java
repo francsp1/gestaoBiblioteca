@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 
 public class EcraLivros extends JFrame {
 
-    private final JFrame parentFrame;
+    private final JFrame ecraPai;
     private JButton btnSair;
     private JPanel painelEcraLivros;
     private JLabel lblLivros;
@@ -23,7 +23,7 @@ public class EcraLivros extends JFrame {
         setContentPane(painelEcraLivros);
         pack();
 
-        this.parentFrame = parent;
+        this.ecraPai = parent;
 
         btnSair.addActionListener(this::btnSairActionPerformed);
 
@@ -48,6 +48,6 @@ public class EcraLivros extends JFrame {
 
     private void btnSairActionPerformed(ActionEvent actionEvent) {
         this.dispose();
-        parentFrame.setVisible(true);
+        ecraPai.setVisible(true);
     }
 }
