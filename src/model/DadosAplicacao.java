@@ -7,7 +7,6 @@ public enum DadosAplicacao {
 
     private ArrayList<Fornecedor> fornecedores;
     private ArrayList<Livro> livros;
-    private ArrayList<Livro> livrosEncomendados;
 
      private DadosAplicacao() {
         this.fornecedores = new ArrayList<>();
@@ -57,7 +56,4 @@ public enum DadosAplicacao {
         return livros;
     }
 
-    public ArrayList<Livro> getLivrosEncomendados() {
-        return livrosEncomendados;
-    }
 }
