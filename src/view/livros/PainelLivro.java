@@ -87,9 +87,4 @@ public class PainelLivro extends Painel {
         new EcraDetalhesLivro(ecraPai, this, livro);
     }
 
-    JLabel getLblEstado(){
-        return lblEstado;
-    }
-
-
 }

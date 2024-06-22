@@ -76,6 +76,7 @@ public class EcraDetalhesLivro extends JFrame {
     }
 
     private void preencherDetalhesLivro(Livro livro) {
+        lblDetalhes.setText("Detalhes do Livro " + livro.getId());
         lblId.setText(String.valueOf(livro.getId()));
         txtISBN.setText(String.valueOf(livro.getIsbn()));
         txtTitulo.setText(livro.getTitulo());

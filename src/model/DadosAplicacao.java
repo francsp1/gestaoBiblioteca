@@ -83,6 +83,10 @@ public enum DadosAplicacao {
         socios.add(socio);
     }
 
+    public ArrayList<Socio> getSocios() {
+        return socios;
+    }
+
     public ArrayList<Socio> getSociosAtivos() {
         ArrayList<Socio> sociosAtivos = new ArrayList<>();
         for (Socio socio : socios) {

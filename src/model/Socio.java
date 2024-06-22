@@ -1,5 +1,7 @@
 package model;
 
+import java.time.LocalDate;
+
 public class Socio {
     private static int contaIdSocios = 0;
     private int id;
@@ -9,6 +11,8 @@ public class Socio {
     private int telemovel;
     private String email;
     private MetodoComunicacaoPreferido metodoComunicacaoPreferido;
+    private LocalDate dataCriacao;
+    private LocalDate dataProximoPagamentoAnuidade;
     private boolean estado;
     private boolean multado;
     private boolean anuidadePaga;
@@ -21,6 +25,8 @@ public class Socio {
         this.telemovel = telemovel;
         this.email = email;
         this.metodoComunicacaoPreferido = metodoComunicacaoPreferido;
+        this.dataCriacao = LocalDate.now();
+        this.dataProximoPagamentoAnuidade = LocalDate.of(1900, 1, 1);
         this.estado = true;
         this.multado = false;
         this.anuidadePaga = false;
@@ -88,6 +94,22 @@ public class Socio {
 
     public void setMetodoComunicacaoPreferido(MetodoComunicacaoPreferido metodoComunicacaoPreferido) {
         this.metodoComunicacaoPreferido = metodoComunicacaoPreferido;
+    }
+
+    public LocalDate getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(LocalDate dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public LocalDate getDataProximoPagamentoAnuidade() {
+        return dataProximoPagamentoAnuidade;
+    }
+
+    public void setDataProximoPagamentoAnuidade(LocalDate dataProximoPagamentoAnuidade) {
+        this.dataProximoPagamentoAnuidade = dataProximoPagamentoAnuidade;
     }
 
     public boolean getEstado() {
