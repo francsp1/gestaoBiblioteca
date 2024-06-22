@@ -22,7 +22,7 @@ public class EcraPrincipal extends JFrame {
     private JButton btnEncomendas;
     private JButton btnSair;
 
-    public EcraPrincipal(String title) {
+    private EcraPrincipal(String title) {
         super(title);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setContentPane(painelPrincipal);
