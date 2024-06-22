@@ -39,7 +39,7 @@ public class EcraSocios extends JFrame{
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1;
         gbc.weighty = 1;
-        gbc.fill = GridBagConstraints.HORIZONTAL;  // New line: make the component stretch horizontally
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         for (Socio socio : DadosAplicacao.INSTANCIA.getSocios()) {
             container.add(new PainelSocio(this, socio), gbc);

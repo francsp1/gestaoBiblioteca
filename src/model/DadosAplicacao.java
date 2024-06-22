@@ -54,6 +54,7 @@ public enum DadosAplicacao {
         Socio socio4 = new Socio("Ana", 987654321, "Rua da Ana", 912345678, "ana@mail.com", MetodoComunicacaoPreferido.SMS);
         Socio socio5 = new Socio("Manuel", 123456789, "Rua do Manuel", 912345678, "manuel@mail.com", MetodoComunicacaoPreferido.SMS);
         Socio socio6 = new Socio("Marta", 987654321, "Rua da Marta", 912345678, "marta@mail.com", MetodoComunicacaoPreferido.SMS);
+        Socio socio7 = new Socio("Francisco", 987654321, "Rua da Francisco", 912345678, "francisco@mail.com", MetodoComunicacaoPreferido.EMAIL);
 
         adicionarSocio(socio1);
         adicionarSocio(socio2);
@@ -61,6 +62,7 @@ public enum DadosAplicacao {
         adicionarSocio(socio4);
         adicionarSocio(socio5);
         adicionarSocio(socio6);
+        adicionarSocio(socio7);
     }
 
     public void adicionarFornecedor(Fornecedor fornecedor) {

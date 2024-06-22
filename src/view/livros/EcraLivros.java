@@ -2,8 +2,11 @@ package view.livros;
 
 import model.DadosAplicacao;
 import model.Livro;
+import model.Socio;
+import view.socios.PainelSocio;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class EcraLivros extends JFrame {
@@ -35,13 +38,17 @@ public class EcraLivros extends JFrame {
 
     void preencherLivros() {
         JPanel container = new JPanel();
-        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        container.setLayout(new GridBagLayout());
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.weightx = 1;
+        gbc.weighty = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         for (Livro livro : DadosAplicacao.INSTANCIA.getLivros()) {
-             container.add(new PainelLivro(this, livro));
+            container.add(new PainelLivro(this, livro), gbc);
         }
-
-        container.setPreferredSize(new java.awt.Dimension(700, 1000));
 
         scrollPaneLivros.setViewportView(container);
     }

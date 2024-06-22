@@ -38,13 +38,17 @@ public class EcraFornecedores extends JFrame {
 
     public void preencherFornecedores() {
         JPanel container = new JPanel();
-        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        container.setLayout(new GridBagLayout());
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.weightx = 1;
+        gbc.weighty = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         for (Fornecedor fornecedor : DadosAplicacao.INSTANCIA.getFornecedores()) {
-            container.add(new PainelFornecedor(this, fornecedor));
+            container.add(new PainelFornecedor(this, fornecedor), gbc);
         }
-
-        container.setPreferredSize(new Dimension(700, 1000));
 
         scrollPaneFornecedores.setViewportView(container);
     }
