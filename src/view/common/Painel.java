@@ -7,7 +7,7 @@ import java.awt.*;
 public class Painel extends JPanel {
     protected final JFrame ecraPai;
 
-    public Painel(JFrame ecraPai) {
+    protected Painel(JFrame ecraPai) {
         this.ecraPai = ecraPai;
         Border blackBorder = BorderFactory.createLineBorder(Color.BLACK);
         setBorder(blackBorder);
