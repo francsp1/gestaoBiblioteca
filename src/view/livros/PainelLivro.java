@@ -1,7 +1,7 @@
 package view.livros;
 
 import model.Livro;
-import view.Painel;
+import view.common.Painel;
 
 import javax.swing.*;
 import java.awt.*;

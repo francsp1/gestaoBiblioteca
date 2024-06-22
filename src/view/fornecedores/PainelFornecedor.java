@@ -1,7 +1,7 @@
 package view.fornecedores;
 
 import model.Fornecedor;
-import view.Painel;
+import view.common.Painel;
 
 import javax.swing.*;
 import java.awt.*;
