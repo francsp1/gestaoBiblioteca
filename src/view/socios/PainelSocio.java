@@ -15,9 +15,10 @@ public class PainelSocio extends Painel {
     private final JLabel lblMorada;
     private final JLabel lblTelemovel;
     private final JLabel lblEmail;
+    private final JLabel lblEstado;
     private final JButton btnDetalhes;
 
-    protected PainelSocio(JFrame ecraPai, Socio socio) {
+    protected PainelSocio(EcraSocios ecraPai, Socio socio) {
         super(ecraPai);
 
         this.socio = socio;
@@ -28,7 +29,8 @@ public class PainelSocio extends Painel {
         lblMorada = new JLabel();
         lblTelemovel = new JLabel();
         lblEmail = new JLabel();
-        btnDetalhes = new JButton("Detalhes");
+        lblEstado = new JLabel();
+        btnDetalhes = new JButton();
 
         preencherDetalhesSocio();
 
@@ -44,16 +46,28 @@ public class PainelSocio extends Painel {
         lblMorada.setText("Morada: " + socio.getMorada());
         lblTelemovel.setText("Telemóvel: " + socio.getTelemovel());
         lblEmail.setText("Email: " + socio.getEmail());
+        StringBuilder estado = new StringBuilder();
+        estado.append("Estado: ");
+        if (socio.getEstado()) {
+            estado.append("Ativo");
+            setBackGroundVerde();
+        } else {
+            estado.append("Inativo");
+            setBackGroundVermelho();
+        }
+        lblEstado.setText(estado.toString());
+        btnDetalhes.setText("Detalhes");
     }
 
     private void desenharPainel() {
-        setLayout(new GridLayout(7, 1));
+        setLayout(new GridLayout(8, 1));
         add(lblId);
         add(lblNome);
         add(lblNIF);
         add(lblMorada);
         add(lblTelemovel);
         add(lblEmail);
+        add(lblEstado);
         add(btnDetalhes);
     }
 

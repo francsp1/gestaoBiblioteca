@@ -59,7 +59,7 @@ public class EcraFornecedores extends JFrame {
     }
 
     private void btnAdicionarFornecedorActionPerformed(ActionEvent actionEvent) {
-        EcraAdicionarFornecedor ecraAdicionarFornecedor = new EcraAdicionarFornecedor(this);
+        new EcraAdicionarFornecedor(this);
     }
 
 

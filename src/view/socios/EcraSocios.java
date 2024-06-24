@@ -24,6 +24,7 @@ public class EcraSocios extends JFrame{
         this.ecraPai = parent;
 
         btnSair.addActionListener(this::btnSairActionPerformed);
+        btnAdicionarSocio.addActionListener(this::btnAdicionarSocioActionPerformed);
 
         preencherSocios();
 
@@ -52,4 +53,9 @@ public class EcraSocios extends JFrame{
         this.dispose();
         ecraPai.setVisible(true);
     }
+
+    private void btnAdicionarSocioActionPerformed(ActionEvent actionEvent) {
+        new EcraAdicionarSocio(this);
+    }
+
 }

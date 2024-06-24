@@ -19,7 +19,7 @@ public class Livro {
     private boolean emprestado;
     private boolean reservado;
 
-    public Livro(String isbn, String titulo, ArrayList<String> autores, String editora, int edicao, int ano, /*int estante, int prateleira,*/ String genero, String subgenero) {
+    public Livro(String isbn, String titulo, ArrayList<String> autores, String editora, int edicao, int ano, String genero, String subgenero) {
         this.id = ++contaIdFornecedores;
         this.isbn = isbn;
         this.titulo = titulo;
@@ -32,23 +32,6 @@ public class Livro {
         this.genero = genero;
         this.subgenero = subgenero;
         this.estado = false;
-        this.emprestado = false;
-        this.reservado = false;
-    }
-
-    public Livro(String isbn, String titulo, ArrayList<String> autores, String editora, int edicao, int ano, int estante, int prateleira, String genero, String subgenero) {
-        this.id = ++contaIdFornecedores;
-        this.isbn = isbn;
-        this.titulo = titulo;
-        this.autores = autores;
-        this.editora = editora;
-        this.edicao = edicao;
-        this.ano = ano;
-        this.estante = estante;
-        this.prateleira = prateleira;
-        this.genero = genero;
-        this.subgenero = subgenero;
-        this.estado = true;
         this.emprestado = false;
         this.reservado = false;
     }

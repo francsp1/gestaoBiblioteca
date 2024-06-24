@@ -30,23 +30,35 @@ public enum DadosAplicacao {
         }}, "PortoEditora", 1, 1943, "Infantil", "Infantil");
         Livro livro3 = new Livro("987654321", "Harry Potter e a Pedra Filosofal", new ArrayList<String>() {{
             add("J.K. Rowling");
-        }}, "PortoEditora", 1, 1997, 10, 11, "Fantasia", "Fantasia Urbana");
+        }}, "PortoEditora", 1, 1997, "Fantasia", "Fantasia Urbana");
         Livro livro4 = new Livro("123456789", "Os Lusíadas", new ArrayList<String>() {{
             add("Luís de Camões");
-        }}, "PortoEditora", 1, 1556, 2, 3, "Épico", "Épico");
+        }}, "PortoEditora", 1, 1556, "Épico", "Épico");
         //livro  com varios autores
-        Livro livro6 = new Livro("123456789", "Classicos da Literatura", new ArrayList<String>() {{
+        Livro livro5 = new Livro("123456789", "Classicos da Literatura", new ArrayList<String>() {{
             add("J.R.R. Tolkien");
             add("Antoine de Saint-Exupéry");
             add("J.K. Rowling");
             add("Luís de Camões");
-        }}, "PortoEditora", 1, 1954, 20, 21, "Fantasia", "Alta Fantasia");
+        }}, "PortoEditora", 1, 1954, "Fantasia", "Alta Fantasia");
 
         adicionarLivro(livro1);
         adicionarLivro(livro2);
+
+        livro3.setEstado(true);
+        livro3.setEstante(10);
+        livro3.setPrateleira(11);
         adicionarLivro(livro3);
+
+        livro4.setEstado(true);
+        livro4.setEstante(20);
+        livro4.setPrateleira(21);
         adicionarLivro(livro4);
-        adicionarLivro(livro6);
+
+        livro5.setEstado(true);
+        livro5.setEstante(30);
+        livro5.setPrateleira(31);
+        adicionarLivro(livro5);
 
         Socio socio1 = new Socio("João", 123456789, "Rua do João", 912345678, "joao@mail.com", MetodoComunicacaoPreferido.EMAIL);
         Socio socio2 = new Socio("Maria", 987654321, "Rua da Maria", 912345678, "maria@mail.com", MetodoComunicacaoPreferido.EMAIL);
