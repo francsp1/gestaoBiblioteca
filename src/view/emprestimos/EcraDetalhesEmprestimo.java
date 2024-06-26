@@ -19,10 +19,10 @@ public class EcraDetalhesEmprestimo extends JFrame {
     private JLabel lblDataEmprestimo;
     private JLabel lblDataEntrega;
     private JButton btnConfirmar;
-    private LocalDate dataEntregaNaoConfirmada;
+    private boolean paraEntregar;
 
     public EcraDetalhesEmprestimo(EcraEmprestimos ecraPai, Emprestimo emprestimo) {
-        super("Detalhes do Fornecedor");
+        super("Detalhes do Empréstimo");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setContentPane(painelEcraDetalhesEmprestimo);
         pack();
@@ -37,6 +37,7 @@ public class EcraDetalhesEmprestimo extends JFrame {
 
         if (emprestimo.getDataEntrega() != null) {
             btnDevolverEmprestimo.setEnabled(false);
+            paraEntregar = false;
         }
 
         setLocationRelativeTo(null);
@@ -61,20 +62,27 @@ public class EcraDetalhesEmprestimo extends JFrame {
 
     private void btnDevolverEmprestimoActionPerformed(ActionEvent actionEvent, Emprestimo emprestimo) {
         btnDevolverEmprestimo.setEnabled(false);
-        LocalDate now = LocalDate.now();
-        this.dataEntregaNaoConfirmada = now;
-        lblDataEntrega.setText(now.toString());
+        lblDataEntrega.setText(LocalDate.now().toString());
+        paraEntregar = true;
     }
 
     private void btnConfirmarActionPerformed(ActionEvent actionEvent, Emprestimo emprestimo) {
-        emprestimo.setDataEntrega(this.dataEntregaNaoConfirmada);
+        if (!paraEntregar) {
+            dispose();
+            return;
+        }
+
+        LocalDate now = LocalDate.now();
+        emprestimo.setDataEntrega(now);
         emprestimo.getLivro().setEmprestado(false);
-        long numeroDiasDesdeEmprestimo = DAYS.between(emprestimo.getDataEmprestimo(), this.dataEntregaNaoConfirmada);
+        long numeroDiasDesdeEmprestimo = DAYS.between(emprestimo.getDataEmprestimo(), now);
         if (numeroDiasDesdeEmprestimo > 15) {
             emprestimo.getSocio().setMultado(true);
             //TODO: usar este valor da multa...
             float multa = (numeroDiasDesdeEmprestimo - 15) * 0.5f;
         }
         ecraPai.preencherEmprestimos();
+
+        dispose();
     }
 }
