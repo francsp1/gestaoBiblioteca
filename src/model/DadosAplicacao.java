@@ -8,6 +8,7 @@ public enum DadosAplicacao {
     private ArrayList<Fornecedor> fornecedores = new ArrayList<>();
     private ArrayList<Livro> livros = new ArrayList<>();
     private ArrayList<Socio> socios = new ArrayList<>();
+    private ArrayList<Encomenda> encomendas = new ArrayList<>();
 
     private DadosAplicacao() {
         Fornecedor fornecedor1 = new Fornecedor("PortoEditora", "DHL", "244 2444 244");
@@ -75,6 +76,16 @@ public enum DadosAplicacao {
         adicionarSocio(socio5);
         adicionarSocio(socio6);
         adicionarSocio(socio7);
+
+
+        Encomenda encomenda1 = new Encomenda("O Principezinho", "Leya", "987654321", 10);
+        Encomenda encomenda2 = new Encomenda("Os Lusíadas", "Bertrand", "123456789", 30);
+        Encomenda encomenda3 = new Encomenda("Classicos da Literatura", "Livraria Cultura", "123456789", 5);
+
+        adicionarEncomenda(encomenda1);
+        adicionarEncomenda(encomenda2);
+        adicionarEncomenda(encomenda3);
+
     }
 
     public void adicionarFornecedor(Fornecedor fornecedor) {
@@ -109,6 +120,15 @@ public enum DadosAplicacao {
             }
         }
         return socios;
+    }
+
+
+    public  void adicionarEncomenda(Encomenda encomenda){
+        encomendas.add(encomenda);
+    }
+
+    public ArrayList<Encomenda> getEncomendas(){
+        return encomendas;
     }
 
 }
