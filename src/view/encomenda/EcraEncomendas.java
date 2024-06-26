@@ -2,8 +2,6 @@ package view.encomenda;
 
 import model.DadosAplicacao;
 import model.Encomenda;
-import view.encomenda.EcraAdicionarEncomenda;
-import view.encomenda.PainelEncomenda;
 
 import javax.swing.*;
 import java.awt.*;

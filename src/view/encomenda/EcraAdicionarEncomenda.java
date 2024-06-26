@@ -7,7 +7,7 @@ import model.Fornecedor;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
-public class EcraAdicionarEncomenda extends JFrame{
+public class EcraAdicionarEncomenda extends JFrame {
 
     private static final String ERRO_1 = "Inserir todos os dados da encomenda";
     private static final String ERRO_2 = "Inserir o Livro.";
@@ -24,7 +24,6 @@ public class EcraAdicionarEncomenda extends JFrame{
     private JButton criarEncomendaButton;
     private JButton sairButton;
     private JLabel lblID;
-
 
 
     public EcraAdicionarEncomenda(EcraEncomendas ecraPai) {
@@ -87,7 +86,7 @@ public class EcraAdicionarEncomenda extends JFrame{
     private void criarEncomendaButtonActionPerformed(ActionEvent actionEvent) {
         if (validarDadosEncomenda()) {
             DadosAplicacao.INSTANCIA.adicionarEncomenda(new Encomenda(textFieldLivro.getText(), textFieldFornecedor.getText(),
-                    textFieldISBN.getText(), Integer.valueOf(textFieldUnidades.getText()) ));
+                    textFieldISBN.getText(), Integer.valueOf(textFieldUnidades.getText())));
 
             dispose();
 

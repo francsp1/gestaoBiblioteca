@@ -58,7 +58,7 @@ public class PainelEncomenda extends Painel{
     }
 
     private void desenharPainel() {
-        setLayout(new GridLayout(6, 1)); // Adjust layout as needed
+        setLayout(new GridLayout(7, 1)); // Adjust layout as needed
         add(lblId);
         add(lblLivro);
         add(lblFornecedor);
