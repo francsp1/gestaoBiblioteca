@@ -7,6 +7,7 @@ public class Socio {
     private int id;
     private String nome;
     private int NIF;
+    private int cartaoCidadao;
     private String morada;
     private int telemovel;
     private String email;
@@ -17,10 +18,11 @@ public class Socio {
     private boolean multado;
     private boolean anuidadePaga;
 
-    public Socio(String nome, int NIF, String morada, int telemovel, String email, MetodoComunicacaoPreferido metodoComunicacaoPreferido) {
+    public Socio(String nome, int NIF, int cartaoCidadao,String morada, int telemovel, String email, MetodoComunicacaoPreferido metodoComunicacaoPreferido) {
         this.id = ++contaIdSocios;
         this.nome = nome;
         this.NIF = NIF;
+        this.cartaoCidadao = cartaoCidadao;
         this.morada = morada;
         this.telemovel = telemovel;
         this.email = email;
@@ -62,6 +64,14 @@ public class Socio {
 
     public void setNIF(int NIF) {
         this.NIF = NIF;
+    }
+
+    public int getCartaoCidadao() {
+        return cartaoCidadao;
+    }
+
+    public void setCartaoCidadao(int cartaoCidadao) {
+        this.cartaoCidadao = cartaoCidadao;
     }
 
     public String getMorada() {

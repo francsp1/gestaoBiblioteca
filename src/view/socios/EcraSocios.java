@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class EcraSocios extends JFrame{
+public class EcraSocios extends JFrame {
     private final JFrame ecraPai;
     private JPanel painelEcraSocios;
     private JButton btnAdicionarSocio;
@@ -32,7 +32,7 @@ public class EcraSocios extends JFrame{
         this.setVisible(true);
     }
 
-    private void preencherSocios() {
+    protected void preencherSocios() {
         JPanel container = new JPanel();
         container.setLayout(new GridBagLayout());
 
@@ -48,6 +48,19 @@ public class EcraSocios extends JFrame{
 
         scrollPaneSocios.setViewportView(container);
     }
+
+    /*
+    private void preencherSocios() {
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+
+        for (Socio socio : DadosAplicacao.INSTANCIA.getSocios()) {
+            container.add(new PainelSocio(this, socio));
+        }
+
+        scrollPaneSocios.setViewportView(container);
+    }
+     */
 
     private void btnSairActionPerformed(ActionEvent actionEvent) {
         this.dispose();

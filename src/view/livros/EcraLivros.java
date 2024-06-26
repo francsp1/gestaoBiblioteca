@@ -36,7 +36,7 @@ public class EcraLivros extends JFrame {
         this.setVisible(true);
     }
 
-    void preencherLivros() {
+    protected void preencherLivros() {
         JPanel container = new JPanel();
         container.setLayout(new GridBagLayout());
 

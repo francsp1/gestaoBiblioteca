@@ -36,7 +36,7 @@ public class EcraFornecedores extends JFrame {
     }
 
 
-    public void preencherFornecedores() {
+    protected void preencherFornecedores() {
         JPanel container = new JPanel();
         container.setLayout(new GridBagLayout());
 

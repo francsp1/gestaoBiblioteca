@@ -61,14 +61,15 @@ public enum DadosAplicacao {
         livro5.setPrateleira(31);
         adicionarLivro(livro5);
 
-        Socio socio1 = new Socio("João", 123456789, "Rua do João", 912345678, "joao@mail.com", MetodoComunicacaoPreferido.EMAIL);
-        Socio socio2 = new Socio("Maria", 987654321, "Rua da Maria", 912345678, "maria@mail.com", MetodoComunicacaoPreferido.EMAIL);
-        Socio socio3 = new Socio("José", 123456789, "Rua do José", 912345678, "jose@mail.com", MetodoComunicacaoPreferido.EMAIL);
-        Socio socio4 = new Socio("Ana", 987654321, "Rua da Ana", 912345678, "ana@mail.com", MetodoComunicacaoPreferido.SMS);
-        Socio socio5 = new Socio("Manuel", 123456789, "Rua do Manuel", 912345678, "manuel@mail.com", MetodoComunicacaoPreferido.SMS);
-        Socio socio6 = new Socio("Marta", 987654321, "Rua da Marta", 912345678, "marta@mail.com", MetodoComunicacaoPreferido.SMS);
-        Socio socio7 = new Socio("Francisco", 987654321, "Rua da Francisco", 912345678, "francisco@mail.com", MetodoComunicacaoPreferido.EMAIL);
+        Socio socio1 = new Socio("João", 111111111, 11111111, "Rua do João", 912345678, "joao@mail.com", MetodoComunicacaoPreferido.EMAIL);
+        Socio socio2 = new Socio("Maria", 222222222, 22222222, "Rua da Maria", 912345678, "maria@mail.com", MetodoComunicacaoPreferido.EMAIL);
+        Socio socio3 = new Socio("José", 333333333, 33333333, "Rua do José", 912345678, "jose@mail.com", MetodoComunicacaoPreferido.EMAIL);
+        Socio socio4 = new Socio("Ana", 444444444, 44444444, "Rua da Ana", 912345678, "ana@mail.com", MetodoComunicacaoPreferido.SMS);
+        Socio socio5 = new Socio("Manuel", 555555555, 55555555, "Rua do Manuel", 912345678, "manuel@mail.com", MetodoComunicacaoPreferido.SMS);
+        Socio socio6 = new Socio("Marta", 666666666, 66666666, "Rua da Marta", 912345678, "marta@mail.com", MetodoComunicacaoPreferido.SMS);
+        Socio socio7 = new Socio("Francisco", 777777777, 7777777, "Rua da Francisco", 912345678, "francisco@mail.com", MetodoComunicacaoPreferido.EMAIL);
 
+        //cria
         adicionarSocio(socio1);
         adicionarSocio(socio2);
         adicionarSocio(socio3);
@@ -122,13 +123,31 @@ public enum DadosAplicacao {
         return socios;
     }
 
+    public boolean isNifUnico(int nif) {
+        for (Socio socio : socios) {
+            if (socio.getNIF() == nif) {
+                return false;
+            }
+        }
+        return true;
+    }
 
-    public  void adicionarEncomenda(Encomenda encomenda){
+    public boolean isCartaoCidadaoUnico(int cartaoCidadao) {
+        for (Socio socio : socios) {
+            if (socio.getCartaoCidadao() == cartaoCidadao) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void adicionarEncomenda(Encomenda encomenda) {
         encomendas.add(encomenda);
     }
 
-    public ArrayList<Encomenda> getEncomendas(){
+    public ArrayList<Encomenda> getEncomendas() {
         return encomendas;
     }
+
 
 }
