@@ -34,14 +34,6 @@ public class Socio {
         this.anuidadePaga = false;
     }
 
-    public static int getContaIdSocios() {
-        return contaIdSocios;
-    }
-
-    public static void setContaIdSocios(int contaIdSocios) {
-        Socio.contaIdSocios = contaIdSocios;
-    }
-
     public int getId() {
         return id;
     }
