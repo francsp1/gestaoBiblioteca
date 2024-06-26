@@ -174,4 +174,9 @@ public class Livro {
     public void add(String autor) {
         this.autores.add(autor);
     }
+
+    @Override
+    public String toString() {
+        return this.id + " - " + this.titulo;
+    }
 }

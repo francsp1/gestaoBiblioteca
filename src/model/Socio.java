@@ -137,4 +137,9 @@ public class Socio {
     public void setAnuidadePaga(boolean anuidadePaga) {
         this.anuidadePaga = anuidadePaga;
     }
+
+    @Override
+    public String toString() {
+        return this.id + " - " + this.nome;
+    }
 }

@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public enum DadosAplicacao {
@@ -9,6 +10,7 @@ public enum DadosAplicacao {
     private ArrayList<Livro> livros = new ArrayList<>();
     private ArrayList<Socio> socios = new ArrayList<>();
     private ArrayList<Encomenda> encomendas = new ArrayList<>();
+    private ArrayList<Emprestimo> emprestimos = new ArrayList<>();
 
     private DadosAplicacao() {
         Fornecedor fornecedor1 = new Fornecedor("PortoEditora", "DHL", "244 2444 244");
@@ -87,6 +89,9 @@ public enum DadosAplicacao {
         adicionarEncomenda(encomenda2);
         adicionarEncomenda(encomenda3);
 
+        Emprestimo emprestimo1 = new Emprestimo(livro3, socio1, LocalDate.of(2024, 6, 1));
+
+        adicionarEmprestimo(emprestimo1);
     }
 
     public void adicionarFornecedor(Fornecedor fornecedor) {
@@ -95,6 +100,10 @@ public enum DadosAplicacao {
 
     public void adicionarLivro(Livro livro) {
         livros.add(livro);
+    }
+
+    public void adicionarEmprestimo(Emprestimo emprestimo) {
+        emprestimos.add(emprestimo);
     }
 
     public ArrayList<Fornecedor> getFornecedores() {
@@ -113,6 +122,8 @@ public enum DadosAplicacao {
         return socios;
     }
 
+    public ArrayList<Emprestimo> getEmprestimos() { return emprestimos; }
+
     public ArrayList<Socio> getSociosAtivos() {
         ArrayList<Socio> sociosAtivos = new ArrayList<>();
         for (Socio socio : socios) {
@@ -120,7 +131,18 @@ public enum DadosAplicacao {
                 sociosAtivos.add(socio);
             }
         }
-        return socios;
+        return sociosAtivos;
+    }
+
+    public ArrayList<Livro> getLivrosDisponiveis() {
+        ArrayList<Livro> livrosDisponiveis = new ArrayList<>();
+        for (Livro livro : livros) {
+            System.out.println(livro.isEmprestado());
+            if (livro.getEstado() && !livro.isEmprestado() && !livro.isReservado()) {
+                livrosDisponiveis.add(livro);
+            }
+        }
+        return livrosDisponiveis;
     }
 
     public boolean isNifUnico(int nif) {

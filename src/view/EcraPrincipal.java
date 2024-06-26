@@ -2,6 +2,7 @@ package view;
 
 import model.DadosAplicacao;
 import model.Fornecedor;
+import view.emprestimos.EcraEmprestimos;
 import view.encomenda.EcraEncomendas;
 import view.fornecedores.EcraFornecedores;
 import view.livros.EcraLivros;
@@ -34,6 +35,7 @@ public class EcraPrincipal extends JFrame {
         btnLivros.addActionListener(this::btnLivrosActionPerformed);
         btnSocios.addActionListener(this::btnSociosActionPerformed);
         btnEncomendas.addActionListener(this::btnEncomendasActionPerformed);
+        btnEmprestimos.addActionListener(this::btnEmprestimosActionPerformed);
 
         setLocationRelativeTo(null);
         setVisible(true);
@@ -67,6 +69,11 @@ public class EcraPrincipal extends JFrame {
 
     private void btnEncomendasActionPerformed(ActionEvent actionEvent) {
         EcraEncomendas ecraEncomendas = new EcraEncomendas(this);
+        setVisible(false);
+    }
+
+    private void btnEmprestimosActionPerformed(ActionEvent actionEvent) {
+        EcraEmprestimos ecraEmprestimos = new EcraEmprestimos(this);
         setVisible(false);
     }
 }

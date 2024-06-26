@@ -9,22 +9,22 @@ import java.awt.event.ActionEvent;
 
 public class EcraSocios extends JFrame {
     private final JFrame ecraPai;
-    private JPanel painelEcraSocios;
-    private JButton btnAdicionarSocio;
+    private JPanel painelEcraEmprestimos;
+    private JButton btnAdicionarEmprestimo;
     private JButton btnSair;
-    private JLabel lblSocios;
+    private JLabel lblEmprestimos;
     private JScrollPane scrollPaneSocios;
 
     public EcraSocios(JFrame parent) {
         super("Livros");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setContentPane(painelEcraSocios);
+        setContentPane(painelEcraEmprestimos);
         pack();
 
         this.ecraPai = parent;
 
         btnSair.addActionListener(this::btnSairActionPerformed);
-        btnAdicionarSocio.addActionListener(this::btnAdicionarSocioActionPerformed);
+        btnAdicionarEmprestimo.addActionListener(this::btnAdicionarSocioActionPerformed);
 
         preencherSocios();
 
