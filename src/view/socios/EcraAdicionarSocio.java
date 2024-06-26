@@ -9,17 +9,18 @@ import java.awt.event.ActionEvent;
 
 public class EcraAdicionarSocio extends JFrame {
 
-    private static final String ERRO_1 = "Deve inserir os dados do socio antes de o adicionar.";
-    private static final String ERRO_2 = "Deve inserir o nome do sócio antes de o adicionar.";
-    private static final String ERRO_3 = "Deve inserir o NIF do sócio antes de o adicionar.";
-    private static final String ERRO_4 = "Deve inserir o número de Cartão de Cidadão do socio antes de o adicionar.";
-    private static final String ERRO_5 = "Deve inserir a morada do socio antes de o adicionar.";
-    private static final String ERRO_6 = "Deve inserir o telemovel do socio antes de o adicionar.";
-    private static final String ERRO_7 = "NIF Invalido.";
-    private static final String ERRO_8 = "Já existe um sócio com o NIF inserido.";
-    private static final String ERRO_9 = "Número de Cartão de Cidadão Invalido.";
-    private static final String ERRO_10 = "Já existe um sócio com o número de Cartão de Cidadão inserido.";
-    private static final String ERRO_11 = "Telemóvel Invalido.";
+    public static final String ERRO_1 = "Deve inserir os dados do socio antes de o adicionar.";
+    public static final String ERRO_2 = "Deve inserir o nome do sócio antes de o adicionar.";
+    public static final String ERRO_3 = "Deve inserir o NIF do sócio antes de o adicionar.";
+    public static final String ERRO_4 = "Deve inserir o número de Cartão de Cidadão do socio antes de o adicionar.";
+    public static final String ERRO_5 = "Deve inserir a morada do socio antes de o adicionar.";
+    public static final String ERRO_6 = "Deve inserir o telemovel do socio antes de o adicionar.";
+    public static final String ERRO_7 = "NIF Invalido.";
+    public static final String ERRO_8 = "Já existe um sócio com o NIF inserido.";
+    public static final String ERRO_9 = "Número de Cartão de Cidadão Invalido.";
+    public static final String ERRO_10 = "Já existe um sócio com o número de Cartão de Cidadão inserido.";
+    public static final String ERRO_11 = "Telemóvel Invalido.";
+
     private final EcraSocios ecraPai;
     private JPanel painelEcraAdicionarSocio;
     private JButton btnAdicionarSocio;
@@ -85,36 +86,25 @@ public class EcraAdicionarSocio extends JFrame {
         } else if (txtTelemovel.getText().trim().isEmpty()) {
             mostrarErro(ERRO_6);
             return false;
-        } else if (!validarNif(txtNif.getText())) {
+        } else if (!Socio.validarNif(txtNif.getText())) {
             mostrarErro(ERRO_7);
             return false;
         } else if (!DadosAplicacao.INSTANCIA.isNifUnico(Integer.parseInt(txtNif.getText()))) {
             mostrarErro(ERRO_8);
             return false;
-        } else if (!validarCartaoCidadao(txtCartaoCidadao.getText())) {
+        } else if (!Socio.validarCartaoCidadao(txtCartaoCidadao.getText())) {
             mostrarErro(ERRO_9);
             return false;
         } else if (!DadosAplicacao.INSTANCIA.isCartaoCidadaoUnico(Integer.parseInt(txtCartaoCidadao.getText()))) {
             mostrarErro(ERRO_10);
             return false;
-        } else if (!validarTelemovel(txtTelemovel.getText())) {
+        } else if (!Socio.validarTelemovel(txtTelemovel.getText())) {
             mostrarErro(ERRO_11);
             return false;
         }
         return true;
     }
 
-    private boolean validarNif(String nif) {
-        return nif.matches("[0-9]{9}");
-    }
-
-    private boolean validarTelemovel(String telemovel) {
-        return telemovel.matches("[0-9]{9}");
-    }
-
-    private boolean validarCartaoCidadao(String cartaoCidadao) {
-        return cartaoCidadao.matches("[0-9]{8}");
-    }
 
     private void mostrarErro(String erro) {
         JOptionPane.showMessageDialog(this, erro);

@@ -39,7 +39,7 @@ public class PainelSocio extends Painel {
         btnDetalhes.addActionListener(e -> btnDetalhesActionPerformed(e, socio));
     }
 
-    private void preencherDetalhesSocio() {
+    void preencherDetalhesSocio() {
         lblId.setText("ID: " + socio.getId());
         lblNome.setText("Nome: " + socio.getNome());
         lblNIF.setText("NIF: " + socio.getNIF());
@@ -72,6 +72,6 @@ public class PainelSocio extends Painel {
     }
 
     private void btnDetalhesActionPerformed(ActionEvent e, Socio socio) {
-
+        new EcraDetalhesSocio((EcraSocios) ecraPai, this, socio);
     }
 }

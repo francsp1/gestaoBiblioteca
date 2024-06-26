@@ -34,6 +34,17 @@ public class Socio {
         this.anuidadePaga = false;
     }
 
+    public static boolean validarNif(String nif) {
+        return nif.matches("[0-9]{9}");
+    }
+
+    public static boolean validarTelemovel(String telemovel) {
+        return telemovel.matches("[0-9]{9}");
+    }
+
+    public static boolean validarCartaoCidadao(String cartaoCidadao) {
+        return cartaoCidadao.matches("[0-9]{8}");
+    }
     public int getId() {
         return id;
     }
