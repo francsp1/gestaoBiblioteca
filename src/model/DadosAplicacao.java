@@ -11,6 +11,7 @@ public enum DadosAplicacao {
     private ArrayList<Socio> socios = new ArrayList<>();
     private ArrayList<Encomenda> encomendas = new ArrayList<>();
     private ArrayList<Emprestimo> emprestimos = new ArrayList<>();
+    private ArrayList<Reserva> reservas = new ArrayList<>();
 
     private DadosAplicacao() {
         Fornecedor fornecedor1 = new Fornecedor("PortoEditora", "DHL", "244 2444 244");
@@ -92,6 +93,19 @@ public enum DadosAplicacao {
         Emprestimo emprestimo1 = new Emprestimo(livro3, socio1, LocalDate.of(2024, 6, 1));
 
         adicionarEmprestimo(emprestimo1);
+
+
+        Reserva reserva1 = new Reserva(1,"João", "O Principezinho", "Antoine de Saint-Exupéry", true);
+        Reserva reserva2 = new Reserva(2,"Ana", "Classicos da Literatura", "new ArrayList<String>() {{\n" +
+                "            add(\"J.R.R. Tolkien\");\n" +
+                "            add(\"Antoine de Saint-Exupéry\");\n" +
+                "            add(\"J.K. Rowling\");\n" +
+                "            add(\"Luís de Camões\");", true);
+        Reserva reserva3 = new Reserva(3,"Francisco", "Os Lusíadas", "Luís de Camões", true);
+
+        adicionarReserva(reserva1);
+        adicionarReserva(reserva2);
+        adicionarReserva(reserva3);
     }
 
     public void adicionarFornecedor(Fornecedor fornecedor) {
@@ -169,6 +183,15 @@ public enum DadosAplicacao {
 
     public ArrayList<Encomenda> getEncomendas() {
         return encomendas;
+    }
+
+
+    public void adicionarReserva(Reserva reserva) {
+        reservas.add(reserva);
+    }
+
+    public ArrayList<Reserva> getReservas() {
+        return reservas;
     }
 
 
